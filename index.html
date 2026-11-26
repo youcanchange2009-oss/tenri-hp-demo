@@ -363,7 +363,7 @@ body.en .feature h3{letter-spacing:.06em;font-weight:300}
     <div class="sec-title"><h2><span class="ja">季節と料金</span><span class="en">Seasons and prices</span></h2><p><span class="ja">月を選ぶと、その月にできる体験が分かります</span><span class="en">Pick your month to see what's on</span></p></div>
     <div class="cal-scroll"><table class="cal" id="cal"></table></div>
     <p class="season-out" id="seasonOut" aria-live="polite"></p>
-    <p class="season-note"><span class="ja">7〜9月は餅つきをお休みします。</span><span class="en">Mochi pounding pauses July to September.</span></p>
+    <p class="season-note"><span class="ja">6〜9月は餅つきをお休みします。</span><span class="en">Mochi pounding pauses June to September.</span></p>
     <div class="cal-scroll" style="margin-top:72px"><table class="list" id="list"></table></div>
     <p class="fine"><span class="ja">料金は案です。公開前に確定します。</span><span class="en">Draft prices, confirmed before launch.</span></p>
   </div>
@@ -469,7 +469,7 @@ body.en .feature h3{letter-spacing:.06em;font-weight:300}
 (function(){try{const c=document.createElement("canvas");c.width=c.height=160;const x=c.getContext("2d"),d=x.createImageData(160,160);for(let i=0;i<d.data.length;i+=4){const v=Math.random()*255;d.data[i]=d.data[i+1]=d.data[i+2]=v;d.data[i+3]=255}x.putImageData(d,0,0);document.documentElement.style.setProperty("--grain",`url(${c.toDataURL()})`)}catch(_){}})();
 
 const EXP=[
- {id:"mochi",ja:"餅つき",en:"Mochi pounding",ro:"Mochitsuki",m:[10,11,12,1,2,3,4,5,6],c:{},sj:"10月〜6月",se:"October to June",min:90,ad:7000,ch:5000,t:"t-mochi"},
+ {id:"mochi",ja:"餅つき",en:"Mochi pounding",ro:"Mochitsuki",m:[10,11,12,1,2,3,4,5],c:{},sj:"10月〜5月",se:"October to May",min:90,ad:7000,ch:5000,t:"t-mochi"},
  {id:"potato",ja:"じゃがいも掘り",en:"Potato digging",ro:"Jagaimo",m:[5],c:{5:"part"},sj:"5月中旬〜末",se:"Mid to late May",min:90,ad:5000,ch:3000,t:"t-potato",dj:"春の畑で、土の中から掘り出す。",de:"Dig them out of the spring soil.",pj:"畝と、土のついたじゃがいも",pe:"Rows and fresh-dug potatoes"},
  {id:"taue",ja:"田植え",en:"Rice planting",ro:"Taue",m:[6],c:{6:"early"},sj:"6月第1週",se:"First week of June",min:120,ad:6000,ch:4000,t:"t-taue",dj:"水を張った田に入り、苗を手で植える。",de:"Step into the flooded paddy and plant by hand.",pj:"水田と苗",pe:"Flooded paddy and seedlings"},
  {id:"inekari",ja:"稲刈り",en:"Rice harvest",ro:"Inekari",m:[10],c:{10:"part"},sj:"10月第3〜4週",se:"Late October",min:120,ad:6000,ch:4000,t:"t-inekari",dj:"鎌で刈り、束ねて、干す。",de:"Cut with a sickle, bundle and hang to dry.",pj:"実った稲と稲架",pe:"Ripe rice drying on racks"},
