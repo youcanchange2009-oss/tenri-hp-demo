@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>天理 つきたて</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500&family=Shippori+Mincho:wght@400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap">
+<style>
+/* Layout: editorial, photo-led. Full-bleed photo hero with vertical mincho headline; hairline rules instead of cards; one dark paddy-green band for film. */
+:root{
+  --paper:#ffffff;
+  --ink:#111111;
+  --sub:#3f403d;
+  --rule:#cfcfcb;
+  --deep:#ffffff;
+  --deep-ink:#111111;
+  --straw:#111111;
+  --serif:"Shippori Mincho B1","Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --latin:"Cormorant Garamond","Shippori Mincho",Georgia,serif;
+}
+:root{color-scheme:light}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.9;letter-spacing:.03em;-webkit-font-smoothing:antialiased}
+body.en{letter-spacing:0}
+body.en .ja, body:not(.en) .en{display:none!important}
+h1,h2,h3,p{margin:0}
+h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:.08em;line-height:1.5}
+body.en h2,body.en h3{letter-spacing:.01em}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--straw);outline-offset:3px}
+.in{max-width:1200px;margin:0 auto;padding-left:max(clamp(28px,7vw,96px),env(safe-area-inset-left,0px));padding-right:max(clamp(28px,7vw,96px),env(safe-area-inset-right,0px))}
+.lat{font-family:var(--latin);font-style:italic;letter-spacing:.02em}
+.tn{font-variant-numeric:tabular-nums lining-nums}
+
+/* photo frames (to be replaced with real photography) */
+.photo{position:relative;overflow:hidden;background-color:#f2f2f0;max-width:100%}
+.photo figcaption{position:absolute;left:14px;bottom:12px;right:14px;z-index:1;font-size:11px;letter-spacing:.08em;color:#8a8a86;line-height:1.5}
+.photo figcaption::before{content:"";display:inline-block;width:18px;height:1px;background:currentColor;vertical-align:middle;margin-right:8px}
+figure{margin:0}
+
+
+/* notice */
+.notice{font-size:11.5px;color:var(--sub);border-bottom:1px solid var(--rule);letter-spacing:.04em}
+.notice .in{padding-block:7px}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--paper)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--rule)}
+header .in{display:flex;align-items:center;gap:28px;height:60px}
+.logo{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.18em;text-decoration:none;white-space:nowrap}
+.logo small{font-family:var(--latin);font-style:italic;font-weight:500;font-size:13px;letter-spacing:.04em;color:var(--sub);margin-left:10px}
+header nav{display:flex;gap:26px;margin-left:auto;font-size:13px}
+header nav a{text-decoration:none}
+header nav a:hover{color:var(--straw)}
+.lang{display:flex;gap:2px;font-family:var(--latin);font-size:14px;align-items:center}
+.lang button{background:none;border:0;color:var(--sub);cursor:pointer;font:inherit;padding:4px 4px}
+.lang button[aria-pressed="true"]{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.reserve{font-size:13px;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px;white-space:nowrap}
+@media (max-width:900px){header nav{display:none}.lang{margin-left:auto}}
+
+/* hero */
+.hero{position:relative}
+.hero .photo{height:min(78svh,720px);min-height:460px}
+.hero .v{position:absolute;top:56px;right:max(28px,8vw);z-index:2;writing-mode:vertical-rl;font-family:var(--serif);font-weight:600;color:var(--ink);font-size:clamp(28px,3.6vw,44px);letter-spacing:.32em;line-height:1.9}
+.hero .photo{height:640px!important;min-height:0!important}
+.hero .vv{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);margin:0;writing-mode:vertical-rl;font-family:var(--serif);font-weight:500;color:var(--ink);font-size:30px;line-height:1;letter-spacing:.34em}
+.hero .vv span{display:block;white-space:nowrap}
+.hero .vv .b{margin-right:1.6em;padding-top:2.68em}
+body.en .hero .vv{display:none}
+body:not(.en) .hero .place{display:none}
+.hero .place{left:auto!important;right:max(40px,6vw);bottom:32px!important;font-size:10.5px!important}
+body{word-break:auto-phrase;line-break:strict}
+h1,h2,h3,h4,p,dd,dt,li{text-wrap:pretty}
+.hero figcaption{left:16px!important;right:auto!important;top:14px;bottom:auto!important;text-align:left!important}
+@media (max-width:600px){.hero .photo{height:520px!important}.hero .vv{font-size:23px}.hero .place{right:20px;left:20px!important;text-align:right;bottom:22px!important}}
+.hero .h-en{position:absolute;left:max(28px,6vw);bottom:64px;z-index:2;color:var(--ink);max-width:620px}
+.hero .h-en h1{font-family:var(--latin);font-weight:500;font-size:clamp(34px,5vw,60px);line-height:1.08;letter-spacing:0}
+.hero .place{position:absolute;left:max(28px,6vw);bottom:28px;z-index:2;color:var(--sub);font-family:var(--latin);font-style:italic;font-size:16px;letter-spacing:.06em}
+body.en .hero .v{display:none}
+.hero figcaption{left:auto;right:16px;text-align:right;width:auto}
+@media (max-width:600px){.hero .v{top:36px;right:24px;font-size:28px}.hero .photo{height:540px;min-height:0}}
+
+.facts{border-bottom:1px solid var(--rule)}
+.facts .in{display:grid;grid-template-columns:repeat(4,1fr)}
+.facts div{padding:20px 0 18px;border-left:1px solid var(--rule);padding-left:20px}
+.facts div:first-child{border-left:0}
+.facts div{padding-left:28px!important;padding-right:12px}
+.facts dt{font-size:11px;color:var(--sub);letter-spacing:.12em}
+.facts dd{margin:2px 0 0;font-family:var(--serif);font-size:17px;font-weight:600}
+@media (max-width:720px){.facts .in{grid-template-columns:1fr 1fr}.facts div:nth-child(3){border-left:0}.facts div:nth-child(n+3){border-top:1px solid var(--rule)}}
+
+section{padding-block:112px}
+@media (max-width:720px){section{padding-block:72px}}
+.label{font-family:var(--latin);font-style:italic;font-size:15px;color:var(--straw);letter-spacing:.04em;margin-bottom:14px;display:block}
+
+/* intro */
+.intro{display:grid;grid-template-columns:5fr 4fr;gap:80px;align-items:end}
+.intro h2{font-size:clamp(24px,3.2vw,36px);line-height:1.75}
+body.en .intro h2{font-family:var(--latin);font-weight:500;font-size:clamp(28px,3.6vw,42px);line-height:1.25}
+.intro p{color:var(--sub);max-width:30em}
+.intro p + p{margin-top:1.2em}
+@media (max-width:820px){.intro{grid-template-columns:1fr;gap:28px}}
+.trio{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin-top:72px}
+.trio .photo{aspect-ratio:4/3}
+.trio .photo:not(:first-child){aspect-ratio:auto}
+@media (max-width:720px){.trio{grid-template-columns:1fr 1fr}.trio .photo:first-child{grid-column:1/-1}.trio .photo:not(:first-child){aspect-ratio:1}}
+
+/* experiences */
+.sec-title{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;border-bottom:1px solid var(--ink);padding-bottom:14px;margin-bottom:48px}
+.sec-title h2{font-size:clamp(22px,2.6vw,28px)}
+.sec-title p{font-size:12.5px;color:var(--sub)}
+.feature{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:center}
+.feature .photo{aspect-ratio:5/4}
+.feature h3{font-size:clamp(30px,4vw,44px);letter-spacing:.2em}
+body.en .feature h3{font-family:var(--latin);font-weight:500;letter-spacing:0}
+.feature .ro{font-family:var(--latin);font-style:italic;color:var(--sub);font-size:16px;margin-top:2px}
+.feature .d{margin-top:22px;max-width:26em}
+@media (max-width:820px){.feature{grid-template-columns:1fr;gap:24px}}
+.spec{margin-top:26px;border-top:1px solid var(--rule)}
+.spec div{display:grid;grid-template-columns:7em 1fr;padding:9px 0;border-bottom:1px solid var(--rule);font-size:13.5px}
+.spec dt{color:var(--sub)}
+.spec dd{margin:0}
+.go{display:inline-block;margin-top:24px;font-size:13.5px;background:none;border:0;border-bottom:1px solid var(--ink);padding:0 0 3px;cursor:pointer;color:var(--ink);font-family:var(--sans);letter-spacing:.06em}
+.go:hover{color:var(--straw);border-color:var(--straw)}
+
+.fields-head{margin:104px 0 36px;display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:end}
+.fields-head h3{font-size:clamp(22px,2.6vw,28px)}
+.fields-head p{color:var(--sub);font-size:14px}
+@media (max-width:820px){.fields-head{grid-template-columns:1fr;gap:12px;margin-top:72px}}
+.fields{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.fields .photo{aspect-ratio:3/4}
+.fields h4{font-family:var(--serif);font-weight:600;font-size:18px;margin:16px 0 0;letter-spacing:.1em}
+body.en .fields h4{letter-spacing:0}
+.fields .when{font-size:12.5px;color:var(--straw);margin-top:2px}
+.fields .d{font-size:13px;color:var(--sub);margin-top:8px;line-height:1.8}
+.fields .p{font-size:13px;margin-top:10px}
+.fields .go{margin-top:12px;font-size:12.5px}
+@media (max-width:900px){.fields{grid-template-columns:1fr 1fr;gap:36px 16px}}
+
+/* season */
+.season{background:var(--paper);border-top:1px solid var(--rule)}
+.cal-scroll{overflow-x:auto}
+table.cal{border-collapse:collapse;width:100%;min-width:760px}
+.cal th,.cal td{padding:0;height:46px;border-bottom:1px solid var(--rule);text-align:center}
+.cal thead th{height:40px;font-family:var(--latin);font-size:15px;font-weight:500;color:var(--sub)}
+.cal thead button{background:none;border:0;font:inherit;color:inherit;cursor:pointer;padding:6px 8px}
+.cal thead th.sel button{color:var(--ink);text-decoration:underline;text-underline-offset:5px}
+
+.cal tbody th{text-align:left;font-family:var(--serif);font-weight:600;font-size:14.5px;white-space:nowrap;padding-right:18px;width:150px;letter-spacing:.06em}
+.cal td i{display:block;height:6px;margin:0 -1px}
+.cal td.on i{background:var(--straw)}
+.cal td.part i{background:linear-gradient(90deg,transparent 40%,var(--straw) 40%)}
+.cal td.early i{background:linear-gradient(90deg,var(--straw) 50%,transparent 50%)}
+.cal tbody tr.off td i{background:#e4e4e1}
+.cal tbody tr.off td.part i{background:linear-gradient(90deg,transparent 40%,#e4e4e1 40%)}
+.cal tbody tr.off td.early i{background:linear-gradient(90deg,#e4e4e1 50%,transparent 50%)}
+.season-out{margin-top:26px;font-family:var(--serif);font-size:18px;min-height:1.9em}
+.season-note{font-size:12px;color:var(--sub);margin-top:8px}
+
+/* list table */
+table.list{border-collapse:collapse;width:100%;min-width:620px;font-size:14px}
+.list th,.list td{text-align:left;padding:16px 12px 16px 0;border-bottom:1px solid var(--rule);font-weight:400}
+.list thead th{font-size:11.5px;color:var(--sub);letter-spacing:.1em;border-bottom:1px solid var(--ink);padding-top:0}
+.list td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.list thead th.n{text-align:right}
+.list td:first-child{font-family:var(--serif);font-weight:600;font-size:15px}
+.fine{font-size:12px;color:var(--sub);margin-top:14px}
+
+/* film */
+.film{background:var(--deep);color:var(--deep-ink)}
+.film{border-top:1px solid var(--rule)}
+.film .label{color:var(--straw)}
+.film .play{border-color:var(--ink)}
+.film .play path{fill:var(--ink)}
+.film-grid{display:grid;grid-template-columns:3fr 1fr;gap:16px;align-items:end;margin-top:40px}
+.film-grid .photo.w{aspect-ratio:16/9}
+.film-grid .photo.t{aspect-ratio:9/16}
+.film h2{font-size:clamp(22px,2.6vw,30px)}
+.film .lead{margin-top:14px;max-width:34em;color:color-mix(in srgb,var(--deep-ink) 75%,transparent);font-size:14px}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1;width:68px;height:68px;border:1px solid rgba(255,255,255,.7);border-radius:50%;display:grid;place-items:center}
+.cuts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:28px;border-top:1px solid color-mix(in srgb,var(--deep-ink) 25%,transparent)}
+.cuts div{padding:14px 16px 0 0;font-size:13px;color:color-mix(in srgb,var(--deep-ink) 80%,transparent)}
+.cuts b{display:block;font-family:var(--latin);font-style:italic;font-weight:500;font-size:15px;color:var(--deep-ink)}
+@media (max-width:720px){.film-grid{grid-template-columns:1fr 1fr}.film-grid .photo.w{grid-column:1/-1}.film-grid .photo.t{max-width:200px}.cuts{grid-template-columns:1fr 1fr;row-gap:14px}}
+
+/* reserve */
+.res{display:grid;grid-template-columns:4fr 6fr;gap:80px}
+@media (max-width:900px){.res{grid-template-columns:1fr;gap:40px}}
+.res h2{font-size:clamp(24px,3vw,32px)}
+.steps{margin:28px 0 0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.steps li{display:grid;grid-template-columns:2.2em 1fr;padding:14px 0;border-bottom:1px solid var(--rule);font-size:14px}
+.steps li > span:first-child{font-family:var(--latin);font-size:18px;color:var(--sub);line-height:1.4}
+.steps small{display:block;color:var(--sub);font-size:12.5px}
+form{display:grid;gap:26px}
+.f{display:grid;gap:4px;min-width:0}
+.f label,.f .lb{font-size:12px;color:var(--sub);letter-spacing:.08em}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px 28px}
+@media (max-width:520px){.two{grid-template-columns:1fr}}
+input,select,textarea{font:inherit;font-size:16px;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--rule);border-radius:0;padding:8px 0;width:100%;min-width:0;letter-spacing:.02em}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--sub) 50%),linear-gradient(-45deg,transparent 50%,var(--sub) 50%);background-position:calc(100% - 10px) 55%,calc(100% - 5px) 55%;background-size:5px 5px;background-repeat:no-repeat;padding-right:24px}
+select option{background:var(--paper);color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:0;border-bottom-color:var(--ink)}
+textarea{min-height:64px;resize:vertical}
+.cnt{display:flex;align-items:center;gap:0;border-bottom:1px solid var(--rule)}
+.cnt input{border:0;text-align:center;width:3em;flex:none}
+.cnt button{background:none;border:0;font-size:18px;color:var(--ink);cursor:pointer;width:36px;height:40px;flex:none}
+.cnt .u{font-size:13px;color:var(--sub);margin-left:auto}
+.hint{font-size:12px;color:var(--straw)}
+.total{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-top:1px solid var(--ink);padding-top:16px}
+.total .k{font-size:12.5px;color:var(--sub)}
+.total .v{font-family:var(--latin);font-size:32px;font-weight:500;font-variant-numeric:lining-nums tabular-nums}
+.submit{justify-self:start;background:var(--ink);color:var(--paper);border:0;padding:16px 44px;font:500 14px var(--sans);letter-spacing:.16em;cursor:pointer}
+.submit:hover{background:var(--straw)}
+.err{color:#b4471f;font-size:13px}
+.thanks{border-top:1px solid var(--ink);padding-top:28px}
+.thanks h3{font-size:24px}
+.thanks p{margin-top:12px;font-size:14px}
+.thanks .ref{font-family:var(--latin);font-size:15px;color:var(--sub)}
+
+/* access */
+.acc{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:start}
+.acc .photo{aspect-ratio:16/11}
+.acc .name{font-family:var(--serif);font-weight:600;font-size:22px;letter-spacing:.1em}
+body.en .acc .name{letter-spacing:0}
+.acc .addr{margin-top:6px;color:var(--sub)}
+.acc a.map{display:inline-block;margin-top:18px;font-size:13.5px;border-bottom:1px solid var(--ink);text-decoration:none;padding-bottom:2px}
+@media (max-width:820px){.acc{grid-template-columns:1fr;gap:28px}}
+.tbc{font-size:11px;color:var(--straw);margin-left:6px;white-space:nowrap}
+
+/* faq */
+.qa{border-top:1px solid var(--rule);max-width:860px}
+.qa div{display:grid;grid-template-columns:1fr 1.4fr;gap:32px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.qa dt{font-family:var(--serif);font-weight:600;font-size:15.5px}
+.qa dd{margin:0;color:var(--sub);font-size:14px}
+@media (max-width:720px){.qa div{grid-template-columns:1fr;gap:6px}}
+
+footer{border-top:1px solid var(--rule);font-size:12.5px;color:var(--sub)}
+footer .in{padding-block:48px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer .logo{color:var(--ink)}
+
+/* type: refined mincho throughout, light weights, wide tracking */
+body{font-weight:500;letter-spacing:.08em;line-height:2.1;font-size:16px}
+.intro p,.feature .d,.fields .d,.qa dd,.spec div,.steps li,.film .lead,.acc .addr{font-size:15.5px;color:var(--ink)}
+.facts dt,.f label,.f .lb,.list thead th,.sec-title p,.fine,.season-note,.total .k,.steps small,.notice{font-size:13px;color:var(--sub)}
+.photo figcaption{font-size:12px;color:#555552}
+.photo{background-color:#ededea}
+.cuts div{font-size:14.5px}
+header nav{font-size:14px}
+@media (max-width:480px){header .in{gap:16px}.logo small{display:none}}
+body.en{letter-spacing:.02em;font-family:var(--latin);font-size:17px;line-height:1.8}
+h2,h3,h4,.logo,.facts dd,.feature h3,.fields h4,.cal tbody th,.list td:first-child,.qa dt,.acc .name,.thanks h3{font-weight:500}
+.hero .v{font-weight:500}
+h2,h3{letter-spacing:.22em}
+.feature h3{letter-spacing:.35em}
+.hero .v{font-weight:400;letter-spacing:.42em}
+.logo{font-weight:500;letter-spacing:.32em;font-size:18px}
+.logo small,.lang,.label,.place,.cuts b,.feature .ro,.steps li span:first-child{font-style:normal}
+.label{font-size:11px;text-transform:uppercase;letter-spacing:.38em;font-weight:400}
+.logo small{text-transform:uppercase;font-size:10px;letter-spacing:.3em}
+.hero .place{font-style:normal;text-transform:uppercase;font-size:11px;letter-spacing:.32em}
+.hero .h-en h1{font-weight:300;letter-spacing:.04em;line-height:1.2}
+.cuts b{text-transform:uppercase;font-size:11px;letter-spacing:.3em;font-weight:400;margin-bottom:4px}
+.facts dt,.f label,.f .lb,.list thead th,.sec-title p{letter-spacing:.2em}
+.facts dd{font-size:16px;letter-spacing:.12em}
+header nav{font-size:12.5px;letter-spacing:.2em}
+.submit{font-family:var(--serif);font-weight:400;letter-spacing:.4em}
+.total .v,.cal thead th{font-weight:300}
+body.en h2,body.en h3,body.en h4,body.en .acc .name,body.en .qa dt,body.en .cal tbody th,body.en .list td:first-child,body.en .logo{font-family:var(--latin);font-weight:400;letter-spacing:.04em}
+body.en .feature h3{letter-spacing:.06em;font-weight:300}
+.label,.fields .when,.hint,.tbc,.film .label{color:var(--sub)}
+.cal tbody tr.off td i{background:none}
+.cal tbody tr.off td.on i{background:#d9d9d5}
+.cal tbody tr.off td.part i{background:linear-gradient(90deg,transparent 40%,#d9d9d5 40%)}
+.cal tbody tr.off td.early i{background:linear-gradient(90deg,#d9d9d5 50%,transparent 50%)}
+.cal thead th,.steps li > span:first-child{font-variant-numeric:lining-nums}
+.fields .d{min-height:3.6em}
+</style>
+
+<div class="notice"><div class="in">
+  <span class="ja">試作ページ ｜ 料金・日程は案、写真・動画は撮影後に差し替え、英語は仮訳です。申込フォームは送信されません。</span>
+  <span class="en">Prototype. Prices and dates are drafts; photos and film will be replaced after the shoot. The form does not send.</span>
+</div></div>
+
+<header>
+  <div class="in">
+    <a class="logo" href="#top">天理 つきたて<small>Tenri, Nara</small></a>
+    <nav aria-label="Sections">
+      <a href="#exp"><span class="ja">体験</span><span class="en">Experiences</span></a>
+      <a href="#season"><span class="ja">季節と料金</span><span class="en">Seasons &amp; prices</span></a>
+      <a href="#film"><span class="ja">映像</span><span class="en">Film</span></a>
+      <a href="#access"><span class="ja">集合場所</span><span class="en">Access</span></a>
+      <a href="#faq"><span class="ja">よくある質問</span><span class="en">FAQ</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="ja" aria-pressed="true">JA</button>/<button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+    <a class="reserve" href="#reserve"><span class="ja">予約</span><span class="en">Book</span></a>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <figure class="photo t-mochi"><figcaption><span class="ja">撮影予定 ｜ 杵を振り下ろす瞬間、湯気の立つ臼</span><span class="en">To be shot: the mallet coming down, steam rising from the mortar</span></figcaption></figure>
+  <p class="vv" aria-hidden="true"><span>自分でついて、丸めて、</span><span class="b">つきたてを味わう。</span></p>
+  <div class="h-en"><h1 class="en">Pound it yourself.<br>Shape it by hand.<br>Taste it fresh.</h1><h1 class="ja" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">自分でついて、丸めて、つきたてを味わう。</h1></div>
+  <p class="place">Mochi &amp; farm days with the Matsunaga family — Tenri, Nara</p>
+</div>
+<dl class="facts" style="margin:0"><div class="in">
+  <div><dt><span class="ja">開業</span><span class="en">Opening</span></dt><dd class="tn"><span class="ja">2027年 春</span><span class="en">Spring 2027</span></dd></div>
+  <div><dt><span class="ja">人数</span><span class="en">Group</span></dt><dd class="tn"><span class="ja">1回 1〜8名</span><span class="en">1–8 guests</span></dd></div>
+  <div><dt><span class="ja">所要時間</span><span class="en">Length</span></dt><dd class="tn"><span class="ja">90〜120分</span><span class="en">90–120 min</span></dd></div>
+  <div><dt><span class="ja">集合</span><span class="en">Meet at</span></dt><dd><span class="ja">天理市勾田町</span><span class="en">Magarita, Tenri</span></dd></div>
+</div></dl>
+
+<section>
+  <div class="in">
+    <div class="intro">
+      <h2><span class="ja">奈良・天理の、<br>ある家族の庭先で。</span><span class="en">In the yard of one family in Tenri.</span></h2>
+      <div>
+        <p class="ja">松永家が、少人数のお客さまだけをお迎えします。杵を握り、つきあがった餅を手で丸め、その場で頬ばる。季節が合えば、畑や田んぼにも一緒に入ります。</p>
+        <p class="en">The Matsunaga family welcomes one small group at a time. Hold the mallet, shape the mochi while it's warm, and eat it right there. In season, come out to the fields and rice paddies with us.</p>
+      </div>
+    </div>
+    <div class="trio">
+      <figure class="photo t-hands"><figcaption><span class="ja">撮影予定 ｜ 手で丸める</span><span class="en">To be shot: shaping by hand</span></figcaption></figure>
+      <figure class="photo t-eat"><figcaption><span class="ja">ひと口目の表情</span><span class="en">The first bite</span></figcaption></figure>
+      <figure class="photo t-family"><figcaption><span class="ja">家族の案内</span><span class="en">Family guides</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="exp" style="padding-top:0">
+  <div class="in">
+    <div class="sec-title"><h2><span class="ja">体験</span><span class="en">Experiences</span></h2><p><span class="ja">料金は1名あたり ／ 大人 12歳以上・子ども 5〜11歳</span><span class="en">Per person / adult 12+, child 5–11</span></p></div>
+    <div class="feature">
+      <figure class="photo t-mochi"><figcaption><span class="ja">撮影予定 ｜ 臼と杵、つきあがった餅</span><span class="en">To be shot: mortar, mallet and finished mochi</span></figcaption></figure>
+      <div>
+        <span class="label">Mochitsuki</span>
+        <h3><span class="ja">餅つき</span><span class="en">Mochi pounding</span></h3>
+        <p class="d"><span class="ja">蒸したもち米を、杵と臼でつきます。合いの手に合わせて交代しながら、つきあがったら手で丸めて、きなこやあんこで。</span><span class="en">Pound steamed rice in a wooden mortar, taking turns with the family. When it's smooth, shape it by hand and eat it with kinako or sweet bean paste.</span></p>
+        <dl class="spec" id="specMochi"></dl>
+        <button class="go" type="button" data-pick="mochi"><span class="ja">この体験を申し込む</span><span class="en">Request this experience</span></button>
+      </div>
+    </div>
+
+    <div class="fields-head">
+      <h3><span class="ja">畑と田んぼ</span><span class="en">Fields and paddies</span></h3>
+      <p><span class="ja">春から秋にかけて、その時期だけの農作業を。日程は天候と育ち具合で前後します。</span><span class="en">Seasonal farm work from spring to autumn. Dates move with the weather and the crop.</span></p>
+    </div>
+    <div class="fields" id="fields"></div>
+  </div>
+</section>
+
+<section class="season" id="season">
+  <div class="in">
+    <div class="sec-title"><h2><span class="ja">季節と料金</span><span class="en">Seasons and prices</span></h2><p><span class="ja">月を選ぶと、その月にできる体験が分かります</span><span class="en">Pick your month to see what's on</span></p></div>
+    <div class="cal-scroll"><table class="cal" id="cal"></table></div>
+    <p class="season-out" id="seasonOut" aria-live="polite"></p>
+    <p class="season-note"><span class="ja">7〜9月は餅つきをお休みします。</span><span class="en">Mochi pounding pauses July to September.</span></p>
+    <div class="cal-scroll" style="margin-top:72px"><table class="list" id="list"></table></div>
+    <p class="fine"><span class="ja">料金は案です。公開前に確定します。</span><span class="en">Draft prices, confirmed before launch.</span></p>
+  </div>
+</section>
+
+<section class="film" id="film">
+  <div class="in">
+    <span class="label">Film</span>
+    <h2><span class="ja">音と手と、笑い声。</span><span class="en">The sound, the hands, the laughter.</span></h2>
+    <p class="lead"><span class="ja">撮影後、ここに紹介映像を掲載します。Instagramには縦型の短い映像を。</span><span class="en">The main film goes here after the shoot, with short vertical clips for Instagram.</span></p>
+    <div class="film-grid">
+      <figure class="photo t-film w"><span class="play" aria-hidden="true"><svg width="18" height="20" viewBox="0 0 18 20"><path d="M2 1l15 9-15 9z" fill="#fff"/></svg></span><figcaption><span class="ja">紹介映像（横）1〜2分 ｜ 撮影予定</span><span class="en">Main film, 1–2 min, to be shot</span></figcaption></figure>
+      <figure class="photo t-film t"><span class="play" aria-hidden="true"><svg width="18" height="20" viewBox="0 0 18 20"><path d="M2 1l15 9-15 9z" fill="#fff"/></svg></span><figcaption>Instagram</figcaption></figure>
+    </div>
+    <div class="cuts">
+      <div><b>Sound</b><span class="ja">餅をつく音</span><span class="en">The thump of the mallet</span></div>
+      <div><b>Hands</b><span class="ja">手で丸める</span><span class="en">Shaping by hand</span></div>
+      <div><b>Faces</b><span class="ja">食べる表情</span><span class="en">The first bite</span></div>
+      <div><b>Family</b><span class="ja">家族の案内</span><span class="en">Family guiding</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="reserve">
+  <div class="in res">
+    <div>
+      <span class="label">Reservation</span>
+      <h2><span class="ja">ご予約</span><span class="en">Book a day</span></h2>
+      <p style="margin-top:14px;color:var(--sub);font-size:14px"><span class="ja">少人数でお迎えするため、日程を確認してから確定のご連絡をします。</span><span class="en">We welcome few guests, so we check each date before confirming.</span></p>
+      <ol class="steps">
+        <li><span>1</span><span><span class="ja">フォームから申込</span><span class="en">Send this form</span></span></li>
+        <li><span>2</span><span><span class="ja">日程と人数を確認</span><span class="en">We check the date</span><small><span class="ja">通常2日以内にご連絡</span><span class="en">Usually within 2 days</span><span class="tbc"><span class="ja">案</span><span class="en">draft</span></span></small></span></li>
+        <li><span>3</span><span><span class="ja">メールで予約確定</span><span class="en">Confirmation by email</span></span></li>
+        <li><span>4</span><span><span class="ja">当日、現地で集合</span><span class="en">Meet us on the day</span></span></li>
+      </ol>
+    </div>
+    <div id="formArea">
+      <form id="bk" novalidate>
+        <div class="f"><label for="f-exp"><span class="ja">体験</span><span class="en">Experience</span></label><select id="f-exp"></select></div>
+        <div class="two">
+          <div class="f"><label for="f-date"><span class="ja">希望日</span><span class="en">Date</span></label><input type="date" id="f-date" min="2027-04-01" max="2028-03-31"><span class="hint" id="dateHint"></span></div>
+          <div class="f"><label for="f-time"><span class="ja">時間帯</span><span class="en">Time</span></label><select id="f-time"></select></div>
+        </div>
+        <div class="two">
+          <div class="f"><span class="lb" id="lb-ad"><span class="ja">大人（12歳以上）</span><span class="en">Adults (12+)</span></span><div class="cnt"><button type="button" data-step="ad" data-d="-1" aria-label="−">−</button><input id="f-ad" type="number" min="0" max="8" value="2" aria-labelledby="lb-ad"><button type="button" data-step="ad" data-d="1" aria-label="+">+</button><span class="u tn" id="u-ad"></span></div></div>
+          <div class="f"><span class="lb" id="lb-ch"><span class="ja">子ども（5〜11歳）</span><span class="en">Children (5–11)</span></span><div class="cnt"><button type="button" data-step="ch" data-d="-1" aria-label="−">−</button><input id="f-ch" type="number" min="0" max="8" value="1" aria-labelledby="lb-ch"><button type="button" data-step="ch" data-d="1" aria-label="+">+</button><span class="u tn" id="u-ch"></span></div></div>
+        </div>
+        <div class="two">
+          <div class="f"><label for="f-name"><span class="ja">お名前</span><span class="en">Name</span></label><input id="f-name" autocomplete="name" value="Emma Wilson"></div>
+          <div class="f"><label for="f-country"><span class="ja">お住まいの国</span><span class="en">Country</span></label><input id="f-country" value="Australia"></div>
+        </div>
+        <div class="f"><label for="f-mail"><span class="ja">メールアドレス</span><span class="en">Email</span></label><input id="f-mail" type="email" autocomplete="email" value="emma@example.com"></div>
+        <div class="f"><label for="f-note"><span class="ja">アレルギー・ご要望</span><span class="en">Allergies or requests</span></label><textarea id="f-note"></textarea></div>
+        <div class="total"><span class="k"><span class="ja">お支払い予定額（案）</span><span class="en">Estimated total (draft)</span></span><span class="v" id="tot">—</span></div>
+        <p class="err" id="err" hidden></p>
+        <button class="submit" type="submit"><span class="ja">申し込む</span><span class="en">Send request</span></button>
+        <p class="fine" style="margin:0"><span class="ja">お支払い方法は確定メールでご案内します（要相談）。試作のため送信はされません。運用時はGoogleフォームで受け付け、スプレッドシートで確認します。</span><span class="en">Payment details come with your confirmation (TBD). Prototype: nothing is sent. In operation this goes to a Google Form.</span></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="access" style="padding-top:0">
+  <div class="in">
+    <div class="sec-title"><h2><span class="ja">集合場所</span><span class="en">Meeting point</span></h2><p><span class="ja">現地集合・現地解散</span><span class="en">Meet and finish on site</span></p></div>
+    <div class="acc">
+      <figure class="photo t-map"><figcaption><span class="ja">公開時に地図を表示</span><span class="en">Map shown at launch</span></figcaption></figure>
+      <div>
+        <p class="name"><span class="ja">天理教南大和分教会</span><span class="en">Tenrikyo Minami-Yamato Church</span></p>
+        <p class="addr"><span class="ja">奈良県天理市勾田町227-1</span><span class="en">227-1 Magarita-cho, Tenri, Nara</span></p>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A5%88%E8%89%AF%E7%9C%8C%E5%A4%A9%E7%90%86%E5%B8%82%E5%8B%BE%E7%94%B0%E7%94%BA227-1" target="_blank" rel="noopener"><span class="ja">Googleマップで見る</span><span class="en">Open in Google Maps</span></a>
+        <dl class="spec" style="margin-top:32px">
+          <div><dt><span class="ja">電車</span><span class="en">Train</span></dt><dd><span class="ja">最寄り駅からの道順</span><span class="en">Directions from the station</span><span class="tbc"><span class="ja">原稿待ち</span><span class="en">TBC</span></span></dd></div>
+          <div><dt><span class="ja">お車</span><span class="en">Car</span></dt><dd><span class="ja">駐車場のご案内</span><span class="en">Parking</span><span class="tbc"><span class="ja">原稿待ち</span><span class="en">TBC</span></span></dd></div>
+          <div><dt><span class="ja">服装</span><span class="en">Wear</span></dt><dd><span class="ja">汚れてもよい服と靴で</span><span class="en">Clothes and shoes that can get dirty</span></dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="in">
+    <div class="sec-title"><h2><span class="ja">よくある質問</span><span class="en">Questions</span></h2><p><span class="ja">回答は案です</span><span class="en">Draft answers</span></p></div>
+    <dl class="qa">
+      <div><dt><span class="ja">日本語が話せなくても大丈夫？</span><span class="en">Do I need to speak Japanese?</span></dt><dd><span class="ja">大丈夫です。英語の案内を用意し、やって見せながら進めます。</span><span class="en">No. We have English guidance and show you each step.</span></dd></div>
+      <div><dt><span class="ja">5歳未満の子どもは？</span><span class="en">Children under 5?</span></dt><dd><span class="ja">申込時にご相談ください。</span><span class="en">Please ask in your request.</span></dd></div>
+      <div><dt><span class="ja">雨の日は？</span><span class="en">If it rains?</span></dt><dd><span class="ja">餅つきは屋根の下で行います。畑・田んぼは日程変更をご相談します。</span><span class="en">Mochi pounding is under cover. For field days we'll talk about another date.</span></dd></div>
+      <div><dt><span class="ja">キャンセルは？</span><span class="en">Cancellations?</span></dt><dd><span class="ja">公開前に規定を掲載します。</span><span class="en">Our policy will be posted before launch.</span><span class="tbc"><span class="ja">要相談</span><span class="en">TBD</span></span></dd></div>
+      <div><dt><span class="ja">食物アレルギーがあります</span><span class="en">Food allergies</span></dt><dd><span class="ja">申込フォームにご記入ください。材料を事前にお知らせします。</span><span class="en">Note them in the form and we'll share ingredients in advance.</span></dd></div>
+    </dl>
+  </div>
+</section>
+</main>
+
+<footer><div class="in">
+  <div><a class="logo" href="#top">天理 つきたて</a><div style="margin-top:10px"><span class="ja">運営 株式会社たつや ／ 名称は仮です</span><span class="en">Operated by Tatsuya Co., Ltd. / working name</span></div></div>
+  <div style="text-align:right"><div>Instagram <span class="tbc"><span class="ja">開設予定</span><span class="en">coming</span></span></div><div style="margin-top:6px">Prototype by A3WORKS</div></div>
+</div></footer>
+
+<script>
+// film grain for photo frames
+(function(){try{const c=document.createElement("canvas");c.width=c.height=160;const x=c.getContext("2d"),d=x.createImageData(160,160);for(let i=0;i<d.data.length;i+=4){const v=Math.random()*255;d.data[i]=d.data[i+1]=d.data[i+2]=v;d.data[i+3]=255}x.putImageData(d,0,0);document.documentElement.style.setProperty("--grain",`url(${c.toDataURL()})`)}catch(_){}})();
+
+const EXP=[
+ {id:"mochi",ja:"餅つき",en:"Mochi pounding",ro:"Mochitsuki",m:[10,11,12,1,2,3,4,5,6],c:{},sj:"10月〜6月",se:"October to June",min:90,ad:7000,ch:5000,t:"t-mochi"},
+ {id:"potato",ja:"じゃがいも掘り",en:"Potato digging",ro:"Jagaimo",m:[5],c:{5:"part"},sj:"5月中旬〜末",se:"Mid to late May",min:90,ad:5000,ch:3000,t:"t-potato",dj:"春の畑で、土の中から掘り出す。",de:"Dig them out of the spring soil.",pj:"畝と、土のついたじゃがいも",pe:"Rows and fresh-dug potatoes"},
+ {id:"taue",ja:"田植え",en:"Rice planting",ro:"Taue",m:[6],c:{6:"early"},sj:"6月第1週",se:"First week of June",min:120,ad:6000,ch:4000,t:"t-taue",dj:"水を張った田に入り、苗を手で植える。",de:"Step into the flooded paddy and plant by hand.",pj:"水田と苗",pe:"Flooded paddy and seedlings"},
+ {id:"inekari",ja:"稲刈り",en:"Rice harvest",ro:"Inekari",m:[10],c:{10:"part"},sj:"10月第3〜4週",se:"Late October",min:120,ad:6000,ch:4000,t:"t-inekari",dj:"鎌で刈り、束ねて、干す。",de:"Cut with a sickle, bundle and hang to dry.",pj:"実った稲と稲架",pe:"Ripe rice drying on racks"},
+ {id:"satsuma",ja:"さつまいも掘り",en:"Sweet potato digging",ro:"Satsumaimo",m:[11],c:{11:"early"},sj:"11月初旬",se:"Early November",min:90,ad:5000,ch:3000,t:"t-satsuma",dj:"つるをたぐって、大きな芋を。",de:"Follow the vines to big sweet potatoes.",pj:"つるの先の芋",pe:"Sweet potatoes on the vine"}
+];
+const MO=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+let lang="ja",month=4;
+const $=id=>document.getElementById(id);
+const L=(j,e)=>lang==="en"?e:j;
+const yen=n=>"¥"+n.toLocaleString("en-US");
+const mn=m=>lang==="en"?MO[m-1]:m+"月";
+
+function spec(e){return `<div><dt>${L("時期","Season")}</dt><dd>${L(e.sj,e.se)}</dd></div><div><dt>${L("所要時間","Length")}</dt><dd class="tn">${e.min}${L("分"," min")}</dd></div>${e.id==="mochi"?`<div><dt>${L("人数","Group")}</dt><dd class="tn">${L("1回 1〜8名","1–8 guests")}</dd></div>`:""}<div><dt>${L("料金","Price")}</dt><dd class="tn">${L("大人","Adult")} ${yen(e.ad)}　${L("子ども","Child")} ${yen(e.ch)}</dd></div>`}
+function render(){
+  $("specMochi").innerHTML=spec(EXP[0]);
+  $("fields").innerHTML=EXP.slice(1).map(e=>`<article><figure class="photo ${e.t}"><figcaption>${L("撮影予定 ｜ ","To be shot: ")}${L(e.pj,e.pe)}</figcaption></figure>
+   <h4>${L(e.ja,e.en)}</h4><p class="when">${L(e.sj,e.se)}・${e.min}${L("分"," min")}</p><p class="d">${L(e.dj,e.de)}</p>
+   <p class="p tn">${L("大人","Adult")} ${yen(e.ad)} ／ ${L("子ども","Child")} ${yen(e.ch)}</p>
+   <button class="go" type="button" data-pick="${e.id}">${L("申し込む","Request")}</button></article>`).join("");
+  let h=`<thead><tr><th></th>${[...Array(12)].map((_,i)=>`<th class="${month===i+1?"sel":""}"><button type="button" data-m="${i+1}" aria-pressed="${month===i+1}">${lang==="en"?MO[i]:i+1}</button></th>`).join("")}</tr></thead><tbody>`;
+  EXP.forEach(e=>{h+=`<tr class="${month&&!e.m.includes(month)?"off":""}"><th>${L(e.ja,e.en)}</th>`;for(let m=1;m<=12;m++){const on=e.m.includes(m);h+=`<td class="${on?(e.c[m]||"on"):""} ${month===m?"sel":""}"><i></i></td>`}h+="</tr>"});
+  $("cal").innerHTML=h+"</tbody>";
+  const list=EXP.filter(e=>e.m.includes(month));
+  $("seasonOut").textContent=list.length?L(`${month}月は、${list.map(e=>e.ja).join("・")}。`,`In ${MO[month-1]}: ${list.map(e=>e.en.toLowerCase()).join(", ")}.`):L(`${month}月は、お休みです。`,`No experiences in ${MO[month-1]}.`);
+  $("list").innerHTML=`<thead><tr><th>${L("体験","Experience")}</th><th>${L("時期（目安）","Season")}</th><th class="n">${L("所要時間","Length")}</th><th class="n">${L("大人","Adult")}</th><th class="n">${L("子ども","Child")}</th></tr></thead><tbody>`+EXP.map(e=>`<tr><td>${L(e.ja,e.en)}</td><td>${L(e.sj,e.se)}</td><td class="n">${e.min}${L("分"," min")}</td><td class="n">${yen(e.ad)}</td><td class="n">${yen(e.ch)}</td></tr>`).join("")+"</tbody>";
+  const v=$("f-exp").value||"mochi";
+  $("f-exp").innerHTML=EXP.map(e=>`<option value="${e.id}">${L(e.ja,e.en)} — ${L(e.sj,e.se)}</option>`).join("");$("f-exp").value=v;
+  const tv=$("f-time").value||"am";
+  $("f-time").innerHTML=`<option value="am">${L("午前","Morning")}</option><option value="pm">${L("午後","Afternoon")}</option>`;$("f-time").value=tv;
+  update();
+}
+const cur=()=>EXP.find(e=>e.id===$("f-exp").value)||EXP[0];
+function update(){
+  ["f-ad","f-ch"].forEach(id=>{let n=parseInt($(id).value,10);if(isNaN(n)||n<0)n=0;if(n>8)n=8;$(id).value=n});
+  const e=cur(),a=+$("f-ad").value,c=+$("f-ch").value;
+  $("u-ad").textContent=yen(e.ad*a);$("u-ch").textContent=yen(e.ch*c);
+  $("tot").textContent=yen(e.ad*a+e.ch*c);
+  $("dateHint").textContent=L("開催の目安："+e.sj,"Runs "+e.se);
+}
+function validate(){
+  const e=cur(),a=+$("f-ad").value,c=+$("f-ch").value,d=$("f-date").value,r=[];
+  if(a<1)r.push(L("大人1名以上でお申し込みください。","At least one adult is needed."));
+  if(a+c>8)r.push(L("1回の定員は8名です。","Up to 8 guests per session."));
+  if(!d)r.push(L("希望日を選んでください。","Please choose a date."));
+  else if(!e.m.includes(+d.split("-")[1]))r.push(L(`${e.ja}は${e.sj}の開催です。`,`${e.en} runs ${e.se}.`));
+  if(!$("f-name").value.trim())r.push(L("お名前をご記入ください。","Please enter your name."));
+  if(!/^\S+@\S+\.\S+$/.test($("f-mail").value.trim()))r.push(L("メールアドレスをご確認ください。","Please check your email."));
+  return r;
+}
+function suggest(){
+  const e=cur(),d=$("f-date").value;if(d&&e.m.includes(+d.split("-")[1]))return;
+  const day={potato:22,taue:5,inekari:23,satsuma:6}[e.id]||17;
+  for(let y=2027;y<=2028;y++)for(let m=1;m<=12;m++){if(y===2027&&m<4)continue;if(e.m.includes(m)){$("f-date").value=`${y}-${String(m).padStart(2,"0")}-${String(day).padStart(2,"0")}`;return}}
+}
+function setLang(l){lang=l;document.body.classList.toggle("en",l==="en");document.documentElement.lang=l;document.querySelectorAll("[data-lang]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===l));render();if(!$("err").hidden)$("err").textContent=validate().join(" ");try{localStorage.setItem("tenri-lang",l)}catch(_){}}
+document.addEventListener("click",ev=>{
+  const t=ev.target;
+  const l=t.closest("[data-lang]");if(l)return setLang(l.dataset.lang);
+  const m=t.closest("[data-m]");if(m){month=+m.dataset.m;render();return}
+  const p=t.closest("[data-pick]");if(p){$("f-exp").value=p.dataset.pick;suggest();update();$("reserve").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});return}
+  const s=t.closest("[data-step]");if(s){const id="f-"+s.dataset.step;$(id).value=(+$(id).value||0)+(+s.dataset.d);update()}
+});
+["f-ad","f-ch","f-date"].forEach(id=>$(id).addEventListener("input",update));
+$("f-exp").addEventListener("change",()=>{suggest();update()});
+$("bk").addEventListener("submit",ev=>{
+  ev.preventDefault();const r=validate();
+  if(r.length){$("err").textContent=r.join(" ");$("err").hidden=false;return}
+  const e=cur(),n=+$("f-ad").value+ +$("f-ch").value,ref="TR-"+Date.now().toString(36).slice(-5).toUpperCase();
+  $("formArea").innerHTML=`<div class="thanks" role="status"><h3>${L("お申し込みを受け付けました","Thank you. We have your request.")}</h3>
+  <p>${L(`${$("f-name").value} 様　${e.ja}　${$("f-date").value}　${n}名`,`${$("f-name").value} — ${e.en}, ${$("f-date").value}, ${n} guests`)}</p>
+  <p>${L("まだ予約は確定していません。日程を確認のうえ、メールで確定のご連絡をいたします。","This is not a confirmed booking yet. We'll check the date and email you to confirm.")}</p>
+  <p class="ref">${L("受付番号","Ref.")} ${ref}</p>
+  <p class="fine">${L("試作のため実際には送信していません。","Prototype: nothing was sent.")}</p>
+  <button class="go" type="button" onclick="location.reload()">${L("フォームに戻る","Back to the form")}</button></div>`;
+});
+try{const s=localStorage.getItem("tenri-lang");if(s==="en")lang="en"}catch(_){}
+$("f-date").value="2027-04-17";
+setLang(lang);
+</script>
+
+</html>
