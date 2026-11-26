@@ -20,6 +20,7 @@
   --deep:#ffffff;
   --deep-ink:#111111;
   --straw:#111111;
+  --shu:#b3312b;
   --serif:"Shippori Mincho B1","Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
   --sans:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
   --latin:"Cormorant Garamond","Shippori Mincho",Georgia,serif;
@@ -283,6 +284,58 @@ body.en .feature h3{letter-spacing:.06em;font-weight:300}
 .cal tbody tr.off td.early i{background:linear-gradient(90deg,#d9d9d5 50%,transparent 50%)}
 .cal thead th,.steps li > span:first-child{font-variant-numeric:lining-nums}
 .fields .d{min-height:3.6em}
+
+/* booking calendar */
+.bcal{border-top:1px solid var(--ink);padding-top:14px;margin-top:4px}
+.bcal-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.bcal-h b{font-family:var(--serif);font-weight:500;font-size:18px;letter-spacing:.14em}
+body.en .bcal-h b{font-family:var(--latin);letter-spacing:.04em;font-size:20px}
+.bcal-h button{background:none;border:1px solid var(--rule);width:38px;height:38px;cursor:pointer;color:var(--ink);font-size:15px;font-family:var(--latin)}
+.bcal-h button:disabled{opacity:.25;cursor:default}
+.dow,.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+.dow span{text-align:center;font-size:11.5px;color:var(--sub);padding:6px 0;letter-spacing:.1em}
+.dow span:first-child{color:var(--shu)}
+.days > *{min-height:64px;border-top:1px solid var(--rule)}
+.days button{position:relative;border-left:0;border-right:0;border-bottom:0;background:none;font-family:inherit;color:var(--ink);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:6px 0;letter-spacing:0;min-width:0}
+.days button:hover:not(:disabled){background:#f5f5f3}
+.days .d{font-family:var(--latin);font-size:17px;line-height:1;font-variant-numeric:lining-nums}
+.days .mk{font-size:11px;line-height:1;color:var(--ink)}
+.days .p{font-size:10.5px;line-height:1;color:var(--sub);font-variant-numeric:tabular-nums lining-nums;font-family:var(--latin);letter-spacing:.02em}
+.days .wk .p{color:var(--ink)}
+.days .pr::before{content:"";position:absolute;top:-1px;left:5px;right:5px;height:3px;background:var(--shu)}
+.days .pr .p,.days .pr .mk{color:var(--shu)}
+.days button:disabled{cursor:default;color:#bdbdb8}
+.days button:disabled .mk{color:#bdbdb8}
+.days .sel{background:var(--ink)!important;color:#fff}
+.days .sel .p,.days .sel .mk{color:#fff}
+.days .sel::before{background:var(--shu)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:12px;font-size:12px;color:var(--sub);letter-spacing:.06em}
+.legend i{font-style:normal;display:inline-block;margin-right:5px;color:var(--ink)}
+.legend .lpr i{width:16px;height:3px;background:var(--shu);vertical-align:middle}
+.slots{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+.slot{border:1px solid var(--rule);background:none;padding:12px 14px;text-align:left;cursor:pointer;font-family:inherit;color:var(--ink);letter-spacing:.06em;display:grid;gap:2px}
+.slot b{font-weight:500;font-size:15px}
+.slot small{font-size:12px;color:var(--sub)}
+.slot[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.slot:disabled{color:#bdbdb8;cursor:default}
+.slot:disabled small{color:#bdbdb8}
+.picked{font-size:14px;margin-top:10px;min-height:1.6em}
+.tag-pr{display:inline-block;color:var(--shu);border:1px solid var(--shu);font-size:11.5px;padding:0 7px;margin-left:8px;letter-spacing:.08em;line-height:1.8;vertical-align:1px}
+.totnote{font-size:12.5px;color:var(--shu);margin-top:-14px;text-align:right}
+.rules{margin-top:14px;border-top:1px solid var(--rule)}
+.rules summary{cursor:pointer;font-size:13px;padding:12px 0;color:var(--sub);letter-spacing:.1em;list-style:none}
+.rules summary::-webkit-details-marker{display:none}
+.rules summary::after{content:" ＋"}
+.rules[open] summary::after{content:" −"}
+.rules table{border-collapse:collapse;width:100%;font-size:13px}
+.rules td{padding:8px 8px 8px 0;border-top:1px solid var(--rule);vertical-align:top}
+.rules td.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums lining-nums}
+.rules .pr td:first-child{color:var(--shu)}
+.cal td.pm i{background:var(--shu)!important}
+.cal td.pm.part i{background:linear-gradient(90deg,transparent 40%,var(--shu) 40%)!important}
+.cal td.pm.early i{background:linear-gradient(90deg,var(--shu) 50%,transparent 50%)!important}
+.cal tbody tr.off td.pm i{opacity:.35}
+@media (max-width:520px){.days > *{min-height:58px}.days .d{font-size:15px}.days .p{font-size:9.5px}.slots{grid-template-columns:1fr}}
 </style>
 
 <div class="notice"><div class="in">
@@ -363,9 +416,9 @@ body.en .feature h3{letter-spacing:.06em;font-weight:300}
     <div class="sec-title"><h2><span class="ja">季節と料金</span><span class="en">Seasons and prices</span></h2><p><span class="ja">月を選ぶと、その月にできる体験が分かります</span><span class="en">Pick your month to see what's on</span></p></div>
     <div class="cal-scroll"><table class="cal" id="cal"></table></div>
     <p class="season-out" id="seasonOut" aria-live="polite"></p>
-    <p class="season-note"><span class="ja">6〜9月は餅つきをお休みします。</span><span class="en">Mochi pounding pauses June to September.</span></p>
+    <p class="season-note"><span class="ja">6〜9月は餅つきをお休みします。朱色は特別料金日（桜の時期・稲刈りの最盛期・年末年始など）がある月です。</span><span class="en">Mochi pounding pauses June to September. Red marks months with peak-day prices (cherry blossom, peak harvest, New Year).</span></p>
     <div class="cal-scroll" style="margin-top:72px"><table class="list" id="list"></table></div>
-    <p class="fine"><span class="ja">料金は案です。公開前に確定します。</span><span class="en">Draft prices, confirmed before launch.</span></p>
+    <p class="fine"><span class="ja">表は通常料金です。土日は1.1倍、特別料金日は最大1.3倍になります。料金はすべて案で、公開前に確定します。</span><span class="en">Regular prices shown. Weekends ×1.1, peak days up to ×1.3. All prices are drafts.</span></p>
   </div>
 </section>
 
@@ -403,9 +456,27 @@ body.en .feature h3{letter-spacing:.06em;font-weight:300}
     <div id="formArea">
       <form id="bk" novalidate>
         <div class="f"><label for="f-exp"><span class="ja">体験</span><span class="en">Experience</span></label><select id="f-exp"></select></div>
-        <div class="two">
-          <div class="f"><label for="f-date"><span class="ja">希望日</span><span class="en">Date</span></label><input type="date" id="f-date" min="2027-04-01" max="2028-03-31"><span class="hint" id="dateHint"></span></div>
-          <div class="f"><label for="f-time"><span class="ja">時間帯</span><span class="en">Time</span></label><select id="f-time"></select></div>
+        <div class="f">
+          <span class="lb"><span class="ja">希望日</span><span class="en">Date</span></span>
+          <div class="bcal">
+            <div class="bcal-h"><button type="button" id="calPrev" aria-label="前の月">‹</button><b id="calTitle"></b><button type="button" id="calNext" aria-label="次の月">›</button></div>
+            <div class="dow" id="dow"></div>
+            <div class="days" id="days"></div>
+            <div class="legend">
+              <span><i>○</i><span class="ja">空きあり</span><span class="en">Available</span></span>
+              <span><i>△</i><span class="ja">残りわずか</span><span class="en">Few left</span></span>
+              <span><i>×</i><span class="ja">満席</span><span class="en">Full</span></span>
+              <span class="lpr"><i></i><span class="ja">特別料金日</span><span class="en">Peak-day price</span></span>
+              <span><span class="ja">金額は大人1名・土日は1.1倍</span><span class="en">Adult price shown; weekends ×1.1</span></span>
+            </div>
+            <details class="rules"><summary><span class="ja">料金の決まり方（案）</span><span class="en">How prices are set (draft)</span></summary><table id="rulesT"></table></details>
+          </div>
+          <span class="hint" id="dateHint"></span>
+        </div>
+        <div class="f">
+          <span class="lb"><span class="ja">時間帯</span><span class="en">Time</span></span>
+          <div class="slots" id="slots"></div>
+          <p class="picked" id="picked"></p>
         </div>
         <div class="two">
           <div class="f"><span class="lb" id="lb-ad"><span class="ja">大人（12歳以上）</span><span class="en">Adults (12+)</span></span><div class="cnt"><button type="button" data-step="ad" data-d="-1" aria-label="−">−</button><input id="f-ad" type="number" min="0" max="8" value="2" aria-labelledby="lb-ad"><button type="button" data-step="ad" data-d="1" aria-label="+">+</button><span class="u tn" id="u-ad"></span></div></div>
@@ -418,6 +489,7 @@ body.en .feature h3{letter-spacing:.06em;font-weight:300}
         <div class="f"><label for="f-mail"><span class="ja">メールアドレス</span><span class="en">Email</span></label><input id="f-mail" type="email" autocomplete="email" value="emma@example.com"></div>
         <div class="f"><label for="f-note"><span class="ja">アレルギー・ご要望</span><span class="en">Allergies or requests</span></label><textarea id="f-note"></textarea></div>
         <div class="total"><span class="k"><span class="ja">お支払い予定額（案）</span><span class="en">Estimated total (draft)</span></span><span class="v" id="tot">—</span></div>
+        <p class="totnote" id="totNote"></p>
         <p class="err" id="err" hidden></p>
         <button class="submit" type="submit"><span class="ja">申し込む</span><span class="en">Send request</span></button>
         <p class="fine" style="margin:0"><span class="ja">お支払い方法は確定メールでご案内します（要相談）。試作のため送信はされません。運用時はGoogleフォームで受け付け、スプレッドシートで確認します。</span><span class="en">Payment details come with your confirmation (TBD). Prototype: nothing is sent. In operation this goes to a Google Form.</span></p>
@@ -490,64 +562,137 @@ function render(){
    <p class="p tn">${L("大人","Adult")} ${yen(e.ad)} ／ ${L("子ども","Child")} ${yen(e.ch)}</p>
    <button class="go" type="button" data-pick="${e.id}">${L("申し込む","Request")}</button></article>`).join("");
   let h=`<thead><tr><th></th>${[...Array(12)].map((_,i)=>`<th class="${month===i+1?"sel":""}"><button type="button" data-m="${i+1}" aria-pressed="${month===i+1}">${lang==="en"?MO[i]:i+1}</button></th>`).join("")}</tr></thead><tbody>`;
-  EXP.forEach(e=>{h+=`<tr class="${month&&!e.m.includes(month)?"off":""}"><th>${L(e.ja,e.en)}</th>`;for(let m=1;m<=12;m++){const on=e.m.includes(m);h+=`<td class="${on?(e.c[m]||"on"):""} ${month===m?"sel":""}"><i></i></td>`}h+="</tr>"});
+  EXP.forEach(e=>{h+=`<tr class="${month&&!e.m.includes(month)?"off":""}"><th>${L(e.ja,e.en)}</th>`;for(let m=1;m<=12;m++){const on=e.m.includes(m);h+=`<td class="${on?(e.c[m]||"on"):""}${on&&premMonth(e,m)?" pm":""} ${month===m?"sel":""}"><i></i></td>`}h+="</tr>"});
   $("cal").innerHTML=h+"</tbody>";
   const list=EXP.filter(e=>e.m.includes(month));
   $("seasonOut").textContent=list.length?L(`${month}月は、${list.map(e=>e.ja).join("・")}。`,`In ${MO[month-1]}: ${list.map(e=>e.en.toLowerCase()).join(", ")}.`):L(`${month}月は、お休みです。`,`No experiences in ${MO[month-1]}.`);
   $("list").innerHTML=`<thead><tr><th>${L("体験","Experience")}</th><th>${L("時期（目安）","Season")}</th><th class="n">${L("所要時間","Length")}</th><th class="n">${L("大人","Adult")}</th><th class="n">${L("子ども","Child")}</th></tr></thead><tbody>`+EXP.map(e=>`<tr><td>${L(e.ja,e.en)}</td><td>${L(e.sj,e.se)}</td><td class="n">${e.min}${L("分"," min")}</td><td class="n">${yen(e.ad)}</td><td class="n">${yen(e.ch)}</td></tr>`).join("")+"</tbody>";
   const v=$("f-exp").value||"mochi";
   $("f-exp").innerHTML=EXP.map(e=>`<option value="${e.id}">${L(e.ja,e.en)} — ${L(e.sj,e.se)}</option>`).join("");$("f-exp").value=v;
-  const tv=$("f-time").value||"am";
-  $("f-time").innerHTML=`<option value="am">${L("午前","Morning")}</option><option value="pm">${L("午後","Afternoon")}</option>`;$("f-time").value=tv;
+  $("dow").innerHTML=(lang==="en"?["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]:["日","月","火","水","木","金","土"]).map(d=>`<span>${d}</span>`).join("");
+  $("rulesT").innerHTML=RULES.map(r=>`<tr class="pr"><td>${L(r.ja,r.en)}</td><td>${L(r.wj,r.we)}</td><td class="n">×${r.rate}</td></tr>`).join("")+`<tr><td>${L("土曜・日曜","Weekends")}</td><td>${L("全体験","All")}</td><td class="n">×${WEEKEND}</td></tr><tr><td colspan="3" style="color:var(--sub)">${L("重なる日は高いほうを適用。100円単位。毎週水曜は定休日（例）。倍率と期間は運営側で日ごとに変更できます。","Higher rate applies when rules overlap. Wednesdays closed (example). Rates and dates are set by the operator day by day.")}</td></tr>`;
+  renderBook();
+}
+// ---- dynamic pricing & availability (sample data) ----
+const RULES=[
+ {ja:"桜の時期",en:"Cherry blossom",wj:"3/28〜4/10・餅つき",we:"Mar 28–Apr 10, mochi",from:[3,28],to:[4,10],exp:["mochi"],rate:1.3},
+ {ja:"大型連休",en:"Golden Week",wj:"4/29〜5/5・全体験",we:"Apr 29–May 5, all",from:[4,29],to:[5,5],exp:"all",rate:1.2},
+ {ja:"稲刈りの最盛期",en:"Peak harvest",wj:"10/22〜10/28・稲刈り",we:"Oct 22–28, harvest",from:[10,22],to:[10,28],exp:["inekari"],rate:1.3},
+ {ja:"紅葉の時期",en:"Autumn leaves",wj:"11/15〜11/30・餅つき",we:"Nov 15–30, mochi",from:[11,15],to:[11,30],exp:["mochi"],rate:1.2},
+ {ja:"年末年始",en:"New Year",wj:"12/28〜1/3・餅つき",we:"Dec 28–Jan 3, mochi",from:[12,28],to:[1,3],exp:"all",rate:1.3}
+];
+const WEEKEND=1.1, CAP=8, FIRST=[2027,4], LAST=[2028,3];
+const OPEN={
+ mochi:(m,d)=>[10,11,12,1,2,3,4,5].includes(m),
+ potato:(m,d)=>m===5&&d>=15,
+ taue:(m,d)=>m===6&&d<=7,
+ inekari:(m,d)=>m===10&&d>=15&&d<=28,
+ satsuma:(m,d)=>m===11&&d<=10
+};
+const inR=(m,d,f,t)=>{const k=m*100+d,a=f[0]*100+f[1],b=t[0]*100+t[1];return a<=b?(k>=a&&k<=b):(k>=a||k<=b)};
+const ruleFor=(e,m,d)=>RULES.filter(r=>(r.exp==="all"||r.exp.includes(e.id))&&inR(m,d,r.from,r.to)).sort((x,y)=>y.rate-x.rate)[0];
+const r100=n=>Math.round(n/100)*100;
+function priceOn(e,dt){const m=dt.getMonth()+1,d=dt.getDate(),wk=[0,6].includes(dt.getDay()),rule=ruleFor(e,m,d),rate=rule?rule.rate:(wk?WEEKEND:1);return{rule,wk,rate,ad:r100(e.ad*rate),ch:r100(e.ch*rate)}}
+function premMonth(e,m){for(let d=1;d<=31;d++)if(OPEN[e.id](m,d)&&ruleFor(e,m,d))return true;return false}
+function hsh(str){let x=2166136261;for(const c of str)x=Math.imul(x^c.charCodeAt(0),16777619);return x>>>0}
+function iso(dt){return `${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,"0")}-${String(dt.getDate()).padStart(2,"0")}`}
+function isOpen(e,dt){return OPEN[e.id](dt.getMonth()+1,dt.getDate())&&dt.getDay()!==3&&dt>=new Date(2027,3,1)&&dt<=new Date(2028,2,31)}
+function seats(e,dt,slot){const pi=priceOn(e,dt);let b=hsh(e.id+iso(dt)+slot)%8;if(pi.rule)b+=3;else if(pi.wk)b+=1;if(hsh(iso(dt)+"x"+slot)%9===0)b=CAP;return Math.max(0,CAP-b)}
+let viewY=2027,viewM=4,selDate=null,selSlot=null;
+const SLOTS=[{id:"am",ja:"午前 10:00〜",en:"Morning 10:00"},{id:"pm",ja:"午後 14:00〜",en:"Afternoon 14:00"}];
+const DOWJ=["日","月","火","水","木","金","土"],DOWE=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const fmt=dt=>L(`${dt.getMonth()+1}月${dt.getDate()}日（${DOWJ[dt.getDay()]}）`,`${DOWE[dt.getDay()]}, ${MO[dt.getMonth()]} ${dt.getDate()}`);
+const parse=s=>{const [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)};
+function renderBook(){
+  const e=cur();
+  $("calTitle").textContent=L(`${viewY}年 ${viewM}月`,`${MO[viewM-1]} ${viewY}`);
+  $("calPrev").disabled=viewY*12+viewM<=FIRST[0]*12+FIRST[1];
+  $("calNext").disabled=viewY*12+viewM>=LAST[0]*12+LAST[1];
+  const first=new Date(viewY,viewM-1,1),n=new Date(viewY,viewM,0).getDate();
+  let h="";for(let i=0;i<first.getDay();i++)h+="<span></span>";
+  for(let d=1;d<=n;d++){
+    const dt=new Date(viewY,viewM-1,d),k=iso(dt);
+    if(!OPEN[e.id](viewM,d)||dt<new Date(2027,3,1)){h+=`<button type="button" disabled><span class="d">${d}</span><span class="mk">&nbsp;</span><span class="p">&nbsp;</span></button>`;continue}
+    if(dt.getDay()===3){h+=`<button type="button" disabled><span class="d">${d}</span><span class="mk">${L("休","—")}</span><span class="p">&nbsp;</span></button>`;continue}
+    const pi=priceOn(e,dt),left=Math.max(...SLOTS.map(s=>seats(e,dt,s.id)));
+    const mk=left===0?"×":left<=3?"△":"○";
+    const cls=[pi.rule?"pr":"",pi.wk&&!pi.rule?"wk":"",selDate===k?"sel":""].join(" ");
+    h+=`<button type="button" class="${cls}" data-day="${k}" ${left===0?"disabled":""} aria-label="${fmt(dt)} ${mk} ${yen(pi.ad)}${pi.rule?" "+L(pi.rule.ja,pi.rule.en):""}"><span class="d">${d}</span><span class="mk">${mk}</span><span class="p">${left===0?"&nbsp;":yen(pi.ad)}</span></button>`;
+  }
+  $("days").innerHTML=h;
+  if(!selDate){$("slots").innerHTML=`<p style="font-size:13.5px;color:var(--sub);grid-column:1/-1">${L("カレンダーから日付を選んでください。","Choose a date on the calendar.")}</p>`;$("picked").textContent="";}
+  else{
+    const dt=parse(selDate);
+    $("slots").innerHTML=SLOTS.map(s=>{const r=seats(e,dt,s.id);return `<button type="button" class="slot" data-slot="${s.id}" aria-pressed="${selSlot===s.id}" ${r===0?"disabled":""}><b>${L(s.ja,s.en)}</b><small>${r===0?L("満席","Full"):L(`残り ${r} 席`,`${r} seats left`)}</small></button>`}).join("");
+    const pi=priceOn(e,dt);
+    $("picked").innerHTML=`${fmt(dt)}${selSlot?" "+L(SLOTS.find(s=>s.id===selSlot).ja,SLOTS.find(s=>s.id===selSlot).en):""}${pi.rule?`<span class="tag-pr">${L(pi.rule.ja+"・特別料金 ×"+pi.rule.rate,pi.rule.en+" ×"+pi.rule.rate)}</span>`:pi.wk?`<span class="tag-pr" style="color:var(--ink);border-color:var(--ink)">${L("土日料金 ×"+WEEKEND,"Weekend ×"+WEEKEND)}</span>`:""}`;
+  }
   update();
+}
+function pickDate(k){
+  const e=cur(),dt=parse(k);selDate=k;
+  const ok=SLOTS.filter(s=>seats(e,dt,s.id)>0);
+  if(!ok.find(s=>s.id===selSlot))selSlot=ok[0]?ok[0].id:null;
+  renderBook();
+}
+function suggest(pref){
+  const e=cur();
+  if(selDate&&isOpen(e,parse(selDate))&&SLOTS.some(s=>seats(e,parse(selDate),s.id)>0)){const dt=parse(selDate);viewY=dt.getFullYear();viewM=dt.getMonth()+1;return pickDate(selDate)}
+  let dt=pref?parse(pref):new Date(2027,3,1);
+  for(let i=0;i<400;i++,dt=new Date(dt.getFullYear(),dt.getMonth(),dt.getDate()+1)){
+    if(isOpen(e,dt)&&SLOTS.some(s=>seats(e,dt,s.id)>0)){viewY=dt.getFullYear();viewM=dt.getMonth()+1;return pickDate(iso(dt))}
+  }
 }
 const cur=()=>EXP.find(e=>e.id===$("f-exp").value)||EXP[0];
 function update(){
   ["f-ad","f-ch"].forEach(id=>{let n=parseInt($(id).value,10);if(isNaN(n)||n<0)n=0;if(n>8)n=8;$(id).value=n});
   const e=cur(),a=+$("f-ad").value,c=+$("f-ch").value;
-  $("u-ad").textContent=yen(e.ad*a);$("u-ch").textContent=yen(e.ch*c);
-  $("tot").textContent=yen(e.ad*a+e.ch*c);
+  const pi=selDate?priceOn(e,parse(selDate)):{ad:e.ad,ch:e.ch,rate:1};
+  $("u-ad").textContent=yen(pi.ad*a);$("u-ch").textContent=yen(pi.ch*c);
+  $("tot").textContent=yen(pi.ad*a+pi.ch*c);
+  $("totNote").textContent=pi.rule?L(`${pi.rule.ja}の特別料金（通常の${pi.rule.rate}倍）です`,`Includes ${pi.rule.en} rate (×${pi.rule.rate})`):pi.wk?L(`土日料金（通常の${WEEKEND}倍）です`,`Weekend rate (×${WEEKEND})`):"";
+  $("totNote").style.color=pi.rule?"var(--shu)":"var(--sub)";
   $("dateHint").textContent=L("開催の目安："+e.sj,"Runs "+e.se);
 }
 function validate(){
-  const e=cur(),a=+$("f-ad").value,c=+$("f-ch").value,d=$("f-date").value,r=[];
+  const e=cur(),a=+$("f-ad").value,c=+$("f-ch").value,r=[];
   if(a<1)r.push(L("大人1名以上でお申し込みください。","At least one adult is needed."));
   if(a+c>8)r.push(L("1回の定員は8名です。","Up to 8 guests per session."));
-  if(!d)r.push(L("希望日を選んでください。","Please choose a date."));
-  else if(!e.m.includes(+d.split("-")[1]))r.push(L(`${e.ja}は${e.sj}の開催です。`,`${e.en} runs ${e.se}.`));
+  if(!selDate)r.push(L("希望日を選んでください。","Please choose a date."));
+  else if(!selSlot)r.push(L("時間帯を選んでください。","Please choose a time."));
+  else{const left=seats(e,parse(selDate),selSlot);if(a+c>left)r.push(L(`その時間帯の残りは${left}席です。`,`Only ${left} seats left at that time.`))}
   if(!$("f-name").value.trim())r.push(L("お名前をご記入ください。","Please enter your name."));
   if(!/^\S+@\S+\.\S+$/.test($("f-mail").value.trim()))r.push(L("メールアドレスをご確認ください。","Please check your email."));
   return r;
-}
-function suggest(){
-  const e=cur(),d=$("f-date").value;if(d&&e.m.includes(+d.split("-")[1]))return;
-  const day={potato:22,taue:5,inekari:23,satsuma:6}[e.id]||17;
-  for(let y=2027;y<=2028;y++)for(let m=1;m<=12;m++){if(y===2027&&m<4)continue;if(e.m.includes(m)){$("f-date").value=`${y}-${String(m).padStart(2,"0")}-${String(day).padStart(2,"0")}`;return}}
 }
 function setLang(l){lang=l;document.body.classList.toggle("en",l==="en");document.documentElement.lang=l;document.querySelectorAll("[data-lang]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===l));render();if(!$("err").hidden)$("err").textContent=validate().join(" ");try{localStorage.setItem("tenri-lang",l)}catch(_){}}
 document.addEventListener("click",ev=>{
   const t=ev.target;
   const l=t.closest("[data-lang]");if(l)return setLang(l.dataset.lang);
   const m=t.closest("[data-m]");if(m){month=+m.dataset.m;render();return}
-  const p=t.closest("[data-pick]");if(p){$("f-exp").value=p.dataset.pick;suggest();update();$("reserve").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});return}
+  const dy=t.closest("[data-day]");if(dy){pickDate(dy.dataset.day);return}
+  const sl=t.closest("[data-slot]");if(sl){selSlot=sl.dataset.slot;renderBook();return}
+  if(t.closest("#calPrev")){viewM--;if(viewM<1){viewM=12;viewY--}renderBook();return}
+  if(t.closest("#calNext")){viewM++;if(viewM>12){viewM=1;viewY++}renderBook();return}
+  const p=t.closest("[data-pick]");if(p){$("f-exp").value=p.dataset.pick;selDate=null;suggest();$("reserve").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});return}
   const s=t.closest("[data-step]");if(s){const id="f-"+s.dataset.step;$(id).value=(+$(id).value||0)+(+s.dataset.d);update()}
 });
-["f-ad","f-ch","f-date"].forEach(id=>$(id).addEventListener("input",update));
-$("f-exp").addEventListener("change",()=>{suggest();update()});
+["f-ad","f-ch"].forEach(id=>$(id).addEventListener("input",update));
+$("f-exp").addEventListener("change",()=>{suggest()});
 $("bk").addEventListener("submit",ev=>{
   ev.preventDefault();const r=validate();
   if(r.length){$("err").textContent=r.join(" ");$("err").hidden=false;return}
-  const e=cur(),n=+$("f-ad").value+ +$("f-ch").value,ref="TR-"+Date.now().toString(36).slice(-5).toUpperCase();
+  const e=cur(),n=+$("f-ad").value+ +$("f-ch").value,dstr=fmt(parse(selDate))+" "+L(SLOTS.find(s=>s.id===selSlot).ja,SLOTS.find(s=>s.id===selSlot).en),tot=$("tot").textContent,ref="TR-"+Date.now().toString(36).slice(-5).toUpperCase();
   $("formArea").innerHTML=`<div class="thanks" role="status"><h3>${L("お申し込みを受け付けました","Thank you. We have your request.")}</h3>
-  <p>${L(`${$("f-name").value} 様　${e.ja}　${$("f-date").value}　${n}名`,`${$("f-name").value} — ${e.en}, ${$("f-date").value}, ${n} guests`)}</p>
+  <p>${L(`${$("f-name").value} 様　${e.ja}　${dstr}　${n}名　${tot}`,`${$("f-name").value} — ${e.en}, ${dstr}, ${n} guests, ${tot}`)}</p>
   <p>${L("まだ予約は確定していません。日程を確認のうえ、メールで確定のご連絡をいたします。","This is not a confirmed booking yet. We'll check the date and email you to confirm.")}</p>
   <p class="ref">${L("受付番号","Ref.")} ${ref}</p>
   <p class="fine">${L("試作のため実際には送信していません。","Prototype: nothing was sent.")}</p>
   <button class="go" type="button" onclick="location.reload()">${L("フォームに戻る","Back to the form")}</button></div>`;
 });
 try{const s=localStorage.getItem("tenri-lang");if(s==="en")lang="en"}catch(_){}
-$("f-date").value="2027-04-17";
 setLang(lang);
+suggest("2027-04-03");
 </script>
 
 </html>
